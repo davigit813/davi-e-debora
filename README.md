@@ -123,13 +123,12 @@
             background: linear-gradient(145deg, #1a0a0f, #0a0507);
             width: 82%;
             max-width: 480px;
-            padding: 2.2rem 1.8rem;
+            padding: 2.5rem 1.8rem;
             border-radius: 28px 8px 28px 8px;
             box-shadow: 0 0 0 2px #ff3b7f88, 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px #ff1a5e55;
             border: 1px solid #ff6a9e55;
             text-align: center;
             backdrop-filter: blur(2px);
-            transition: 0.2s;
         }
 
         .center-box h1 {
@@ -141,6 +140,17 @@
             margin-bottom: 0.6rem;
             word-break: break-word;
             line-height: 1.3;
+        }
+
+        /* Frase "DESDE O DIA" - igual a "EU TE AMO" mas menor */
+        .center-box .subtitle {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
+            margin-bottom: 0.8rem;
+            word-break: break-word;
         }
 
         .center-box .highlight-date {
@@ -208,7 +218,19 @@
             color: #ffb3c6;
         }
 
-        /* Efeito de pulsação suave nos números (opcional) */
+        /* Texto "horas · minutos · segundos" no canto direito */
+        .clock-footer {
+            text-align: right;
+            margin-top: 8px;
+            padding-right: 8px;
+            color: #ffa5b9;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            text-shadow: 0 0 10px #ff1a5e;
+        }
+
+        /* Efeito de pulsação suave nos números */
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
@@ -219,8 +241,14 @@
 
         /* responsivo */
         @media (max-width: 550px) {
+            .center-box {
+                padding: 1.8rem 1.2rem;
+            }
             .center-box h1 {
                 font-size: 1.6rem;
+            }
+            .center-box .subtitle {
+                font-size: 1.4rem;
             }
             .center-box .highlight-date {
                 font-size: 2.4rem;
@@ -239,6 +267,9 @@
                 letter-spacing: 18px;
                 line-height: 1.6;
             }
+            .clock-footer {
+                font-size: 0.5rem;
+            }
         }
 
         @media (max-width: 400px) {
@@ -249,12 +280,18 @@
             .center-box h1 {
                 font-size: 1.3rem;
             }
+            .center-box .subtitle {
+                font-size: 1.1rem;
+            }
             .center-box .highlight-date {
                 font-size: 1.8rem;
             }
             .clock-container {
                 font-size: 1rem;
                 padding: 0.2rem 0.4rem;
+            }
+            .clock-footer {
+                font-size: 0.45rem;
             }
         }
     </style>
@@ -273,12 +310,16 @@
 
         <!-- QUADRADO ESCURO CENTRAL -->
         <div class="center-box">
+            <!-- EU TE AMO -->
             <h1>EU TE AMO</h1>
-            <!-- data destacada no meio -->
-            <div class="highlight-date">26/06/2026</div>
-            <h1 style="font-size: 1.4rem; margin-top: -0.2rem; opacity: 0.9;">DESDE O MEIO</h1>
+            
+            <!-- DESDE O DIA (agora embaixo do EU TE AMO, igual na foto) -->
+            <div class="subtitle">DESDE O DIA</div>
 
-            <!-- horas, minutos, segundos em destaque (INFINITOS) -->
+            <!-- DATA DESTACADA -->
+            <div class="highlight-date">26/06/2026</div>
+
+            <!-- RELÓGIO (horas, minutos, segundos) -->
             <div class="clock-container" id="clockDisplay">
                 <div class="time-block">
                     <span class="label">⏱️</span>
@@ -295,6 +336,9 @@
                     <span id="seconds">00</span>
                 </div>
             </div>
+
+            <!-- horas · minutos · segundos (canto direito, igual na foto) -->
+            <div class="clock-footer">horas · minutos · segundos</div>
         </div>
     </div>
 
@@ -304,26 +348,19 @@
             // RELÓGIO INFINITO - atualiza a cada segundo
             // =============================================
             
-            // Função que atualiza as horas, minutos e segundos
             function updateClock() {
                 const now = new Date();
                 
-                // Pega horas, minutos e segundos e formata com 2 dígitos
                 const hours = String(now.getHours()).padStart(2, '0');
                 const minutes = String(now.getMinutes()).padStart(2, '0');
                 const seconds = String(now.getSeconds()).padStart(2, '0');
                 
-                // Atualiza os elementos HTML
                 document.getElementById('hours').textContent = hours;
                 document.getElementById('minutes').textContent = minutes;
                 document.getElementById('seconds').textContent = seconds;
             }
 
-            // Atualiza imediatamente ao carregar a página
             updateClock();
-            
-            // Configura a atualização automática a cada 1 segundo (1000ms)
-            // Isso faz com que o relógio rode infinitamente
             setInterval(updateClock, 1000);
 
             // =============================================
@@ -334,29 +371,25 @@
                 const el = document.documentElement;
                 if (el.requestFullscreen) {
                     el.requestFullscreen().catch(() => {});
-                } else if (el.webkitRequestFullscreen) { // Safari
+                } else if (el.webkitRequestFullscreen) {
                     el.webkitRequestFullscreen();
-                } else if (el.msRequestFullscreen) { // IE/Edge
+                } else if (el.msRequestFullscreen) {
                     el.msRequestFullscreen();
                 }
             }
 
-            // Tenta entrar em tela cheia assim que a página carregar
             window.addEventListener('load', function() {
                 setTimeout(entrarTelaCheia, 300);
             });
 
-            // Também tenta ao tocar na tela (caso o navegador bloqueie na primeira vez)
             document.addEventListener('touchstart', function() {
                 entrarTelaCheia();
             }, { once: true });
 
-            // E também ao clicar (para desktop)
             document.addEventListener('click', function() {
                 entrarTelaCheia();
             }, { once: true });
 
-            // Se o usuário sair da tela cheia, tenta reativar ao tocar novamente
             document.addEventListener('touchstart', function() {
                 if (!document.fullscreenElement && !document.webkitFullscreenElement) {
                     entrarTelaCheia();
