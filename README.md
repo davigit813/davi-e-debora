@@ -233,10 +233,10 @@
         /* Efeito de pulsação suave nos números */
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+            50% { opacity: 0.10; }
         }
         .clock-container .time-block span {
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
         /* responsivo */
