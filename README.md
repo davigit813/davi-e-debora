@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1a0a0f">
-    <title>❤️ Eu te amo desde o dia ❤️</title>
+    <title>❤️ Davi & Debóra ❤️</title>
     <style>
         * {
             margin: 0;
@@ -131,6 +131,17 @@
             backdrop-filter: blur(2px);
         }
 
+        /* Nome DEBÓRA em cima do EU TE AMO */
+        .center-box .nome-top {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px #ff4d8f, 0 0 60px #ff1a5e;
+            margin-bottom: 0.2rem;
+            word-break: break-word;
+        }
+
         .center-box h1 {
             color: white;
             font-size: 2.2rem;
@@ -244,6 +255,9 @@
             .center-box {
                 padding: 1.8rem 1.2rem;
             }
+            .center-box .nome-top {
+                font-size: 2.0rem;
+            }
             .center-box h1 {
                 font-size: 1.6rem;
             }
@@ -276,6 +290,9 @@
             .center-box {
                 padding: 1.2rem 0.8rem;
                 width: 92%;
+            }
+            .center-box .nome-top {
+                font-size: 1.6rem;
             }
             .center-box h1 {
                 font-size: 1.3rem;
@@ -316,6 +333,9 @@
 
         <!-- QUADRADO ESCURO CENTRAL -->
         <div class="center-box">
+            <!-- DEBÓRA em cima do EU TE AMO -->
+            <div class="nome-top">DEBÓRA</div>
+            
             <!-- EU TE AMO -->
             <h1>EU TE AMO</h1>
             
@@ -342,6 +362,9 @@
                     <span id="seconds">00</span>
                 </div>
             </div>
+
+            <!-- horas · minutos · segundos (canto direito) -->
+            <div class="clock-footer">horas · minutos · segundos</div>
         </div>
     </div>
 
