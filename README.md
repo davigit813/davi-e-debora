@@ -362,10 +362,6 @@
                     <span id="seconds">00</span>
                 </div>
             </div>
-
-            <!-- horas · minutos · segundos (canto direito) -->
-            <div class="clock-footer">horas · minutos · segundos</div>
-        </div>
     </div>
 
     <script>
