@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1a0a0f">
-    <title>❤️ Eu te amo desde o meio ❤️</title>
+    <title>❤️ Eu te amo desde o dia ❤️</title>
     <style>
         * {
             margin: 0;
