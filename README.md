@@ -214,7 +214,7 @@
             50% { opacity: 0.7; }
         }
         .clock-container .time-block span {
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 5s ease-in-out infinite;
         }
 
         /* responsivo */
@@ -294,10 +294,6 @@
                     <span class="label">⏱️</span>
                     <span id="seconds">00</span>
                 </div>
-            </div>
-            <!-- pequeno detalhe: "horas minutos segundos" em baixo do relógio (direita) -->
-            <div style="text-align: right; margin-top: 6px; color: #ffa5b9; font-size: 0.6rem; letter-spacing: 1px; opacity: 0.8; padding-right: 8px; text-shadow: 0 0 10px #ff1a5e;">
-                horas · minutos · segundos
             </div>
         </div>
     </div>
