@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Metas para tela cheia (modo app) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
@@ -16,7 +15,6 @@
             box-sizing: border-box;
         }
 
-        /* Remove scroll e deixa 100% da tela */
         html, body {
             width: 100%;
             height: 100%;
@@ -28,7 +26,6 @@
             left: 0;
         }
 
-        /* Container principal com fundo mesclado preto/rosa e corações */
         .love-card {
             position: fixed;
             top: 0;
@@ -46,7 +43,6 @@
             box-shadow: none;
         }
 
-        /* Camada de corações flutuantes (todos os lugares) */
         .hearts-bg {
             position: absolute;
             inset: 0;
@@ -87,7 +83,6 @@
             filter: drop-shadow(0 0 6px #ff3366aa);
         }
 
-        /* Corações em forma de texto (unicode) */
         .hearts-unicode {
             position: absolute;
             inset: 0;
@@ -115,7 +110,6 @@
             filter: drop-shadow(0 0 6px #ff77aa);
         }
 
-        /* Quadrado escuro central com letras brancas */
         .center-box {
             position: relative;
             z-index: 10;
@@ -131,7 +125,6 @@
             backdrop-filter: blur(2px);
         }
 
-        /* Nome DEBÓRA em cima do EU TE AMO */
         .center-box .nome-top {
             color: white;
             font-size: 2.8rem;
@@ -153,7 +146,6 @@
             line-height: 1.3;
         }
 
-        /* Frase "DESDE O DIA" - igual a "EU TE AMO" mas menor */
         .center-box .subtitle {
             color: white;
             font-size: 1.8rem;
@@ -229,19 +221,6 @@
             color: #ffb3c6;
         }
 
-        /* Texto "horas · minutos · segundos" no canto direito */
-        .clock-footer {
-            text-align: right;
-            margin-top: 8px;
-            padding-right: 8px;
-            color: #ffa5b9;
-            font-size: 0.6rem;
-            letter-spacing: 1px;
-            opacity: 0.8;
-            text-shadow: 0 0 10px #ff1a5e;
-        }
-
-        /* Efeito de pulsação suave nos números */
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.10; }
@@ -250,7 +229,6 @@
             animation: pulse 1.5s ease-in-out infinite;
         }
 
-        /* responsivo */
         @media (max-width: 550px) {
             .center-box {
                 padding: 1.8rem 1.2rem;
@@ -281,9 +259,6 @@
                 letter-spacing: 18px;
                 line-height: 1.6;
             }
-            .clock-footer {
-                font-size: 0.5rem;
-            }
         }
 
         @media (max-width: 400px) {
@@ -307,15 +282,11 @@
                 font-size: 1rem;
                 padding: 0.2rem 0.4rem;
             }
-            .clock-footer {
-                font-size: 0.45rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="love-card">
-        <!-- camada pesada de corações (fundo mesclado preto/rosa) -->
         <div class="hearts-bg"></div>
         <div class="hearts-unicode" aria-hidden="true">
             <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
@@ -329,23 +300,22 @@
             <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
             <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
             <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
+            <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span> <span>❤️</span>
         </div>
 
-        <!-- QUADRADO ESCURO CENTRAL -->
         <div class="center-box">
-            <!-- DEBÓRA em cima do EU TE AMO -->
             <div class="nome-top">DEBÓRA</div>
-            
-            <!-- EU TE AMO -->
             <h1>EU TE AMO</h1>
-            
-            <!-- DESDE O DIA (agora embaixo do EU TE AMO, igual na foto) -->
             <div class="subtitle">DESDE O DIA</div>
-
-            <!-- DATA DESTACADA -->
             <div class="highlight-date">26/06/2026</div>
-
-            <!-- RELÓGIO (horas, minutos, segundos) -->
             <div class="clock-container" id="clockDisplay">
                 <div class="time-block">
                     <span class="label">⏱️</span>
@@ -362,37 +332,20 @@
                     <span id="seconds">00</span>
                 </div>
             </div>
-
-            <!-- horas · minutos · segundos (canto direito) -->
-            <div class="clock-footer">horas · minutos · segundos</div>
         </div>
     </div>
 
     <script>
         (function() {
-            // =============================================
-            // RELÓGIO INFINITO - atualiza a cada segundo
-            // =============================================
-            
             function updateClock() {
                 const now = new Date();
-                
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-                
-                document.getElementById('hours').textContent = hours;
-                document.getElementById('minutes').textContent = minutes;
-                document.getElementById('seconds').textContent = seconds;
+                document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
             }
-
             updateClock();
             setInterval(updateClock, 1000);
 
-            // =============================================
-            // TELA CHEIA AUTOMÁTICA
-            // =============================================
-            
             function entrarTelaCheia() {
                 const el = document.documentElement;
                 if (el.requestFullscreen) {
@@ -421,7 +374,6 @@
                     entrarTelaCheia();
                 }
             });
-
         })();
     </script>
 </body>
