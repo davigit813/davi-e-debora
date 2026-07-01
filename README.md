@@ -113,90 +113,81 @@
         .center-box {
             position: relative;
             z-index: 10;
-            background: #0d0d0d;
-            background: linear-gradient(145deg, #1a0a0f, #0a0507);
+            background: transparent;
             width: 82%;
             max-width: 480px;
-            padding: 2.5rem 1.8rem;
-            border-radius: 28px 8px 28px 8px;
-            box-shadow: 0 0 0 2px #ff3b7f88, 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px #ff1a5e55;
-            border: 1px solid #ff6a9e55;
+            padding: 2rem 1.5rem;
             text-align: center;
-            backdrop-filter: blur(2px);
         }
 
+        /* TUDO JUNTO, SEM ESPAÇO ENTRE ELES */
         .center-box .nome-top {
             color: white;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             letter-spacing: 4px;
             text-shadow: 0 0 30px #ff4d8f, 0 0 60px #ff1a5e;
-            margin-bottom: 0.2rem;
-            word-break: break-word;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
         }
 
         .center-box h1 {
             color: white;
-            font-size: 2.2rem;
+            font-size: 3rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
-            margin-bottom: 0.2rem;
-            word-break: break-word;
-            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
         }
 
         .center-box .subtitle {
             color: white;
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 600;
             letter-spacing: 3px;
             text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
-            margin-bottom: 0.8rem;
-            word-break: break-word;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
         }
 
         .center-box .highlight-date {
             color: white;
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            background: #1a0a0f;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
             display: inline-block;
             letter-spacing: 4px;
             text-shadow: 0 0 20px #ff4d8f, 0 0 60px #ff1a5e;
-            box-shadow: 0 0 0 2px #ff3b7f55, 0 0 20px #ff1a5e44;
-            margin: 0.3rem 0 0.8rem 0;
-            border: 1px solid #ff6a9e33;
+            margin: 0.3rem 0 0 0;
+            padding: 0;
         }
 
         .clock-container {
-            margin-top: 1.2rem;
+            margin-top: 0.3rem;
             display: flex;
             justify-content: center;
-            gap: 0.4rem;
+            gap: 0.3rem;
             flex-wrap: wrap;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 600;
             letter-spacing: 2px;
-            background: #0d0d0d;
-            padding: 0.5rem 1.2rem;
-            border-radius: 60px;
-            border: 1px solid #ff3b7f44;
-            box-shadow: 0 0 20px #ff1a5e22;
+            background: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: none;
         }
 
         .clock-container .time-block {
             display: flex;
             gap: 0.2rem;
             align-items: center;
-            background: #1a0a0f;
-            padding: 0.2rem 0.7rem;
-            border-radius: 40px;
-            border-left: 2px solid #ff4d8f55;
-            border-right: 2px solid #ff4d8f55;
+            background: transparent;
+            padding: 0;
+            border: none;
         }
 
         .clock-container .time-block span {
@@ -213,32 +204,26 @@
         }
 
         .clock-container .label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.7;
-            margin-right: 4px;
-            color: #ffb3c6;
+            display: none;
         }
 
         @media (max-width: 550px) {
-            .center-box { padding: 1.8rem 1.2rem; }
-            .center-box .nome-top { font-size: 2.0rem; }
-            .center-box h1 { font-size: 1.6rem; }
-            .center-box .subtitle { font-size: 1.4rem; }
-            .center-box .highlight-date { font-size: 2.4rem; padding: 0.1rem 0.6rem; }
-            .clock-container { font-size: 1.3rem; padding: 0.3rem 0.6rem; gap: 0.2rem; }
-            .clock-container .time-block { padding: 0.1rem 0.4rem; }
-            .hearts-unicode { font-size: 20px; letter-spacing: 18px; line-height: 1.6; }
+            .center-box { padding: 1.5rem 1rem; }
+            .center-box .nome-top { font-size: 2.2rem; }
+            .center-box h1 { font-size: 2.2rem; }
+            .center-box .subtitle { font-size: 1.8rem; }
+            .center-box .highlight-date { font-size: 2.5rem; }
+            .clock-container { font-size: 2rem; }
+            .hearts-unicode { font-size: 18px; letter-spacing: 14px; }
         }
 
         @media (max-width: 400px) {
-            .center-box { padding: 1.2rem 0.8rem; width: 92%; }
-            .center-box .nome-top { font-size: 1.6rem; }
-            .center-box h1 { font-size: 1.3rem; }
-            .center-box .subtitle { font-size: 1.1rem; }
-            .center-box .highlight-date { font-size: 1.8rem; }
-            .clock-container { font-size: 1rem; padding: 0.2rem 0.4rem; }
+            .center-box { padding: 1rem 0.8rem; width: 92%; }
+            .center-box .nome-top { font-size: 1.8rem; }
+            .center-box h1 { font-size: 1.8rem; }
+            .center-box .subtitle { font-size: 1.5rem; }
+            .center-box .highlight-date { font-size: 2rem; }
+            .clock-container { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -275,17 +260,14 @@
             <div class="highlight-date">26/06/2026</div>
             <div class="clock-container" id="clockDisplay">
                 <div class="time-block">
-                    <span class="label">⏱️</span>
                     <span id="hours">00</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="time-block">
-                    <span class="label">⏱️</span>
                     <span id="minutes">00</span>
                 </div>
                 <span class="separator">:</span>
                 <div class="time-block">
-                    <span class="label">⏱️</span>
                     <span id="seconds">00</span>
                 </div>
             </div>
