@@ -302,15 +302,47 @@
 
     <script>
         (function() {
-            function updateClock() {
-                const now = new Date();
-                document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
+            // =============================================
+            // TEMPORIZADOR INFINITO (NUNCA RESETA)
+            // =============================================
+            
+            const STORAGE_KEY = 'amor_start_time';
+
+            // Pega o horário de início salvo ou cria um novo
+            let startTime = localStorage.getItem(STORAGE_KEY);
+            
+            if (!startTime) {
+                // Primeira vez que a pessoa acessa: salva o horário atual
+                startTime = Date.now();
+                localStorage.setItem(STORAGE_KEY, startTime);
+            } else {
+                startTime = parseInt(startTime, 10);
             }
+
+            // Função que atualiza o relógio com o tempo decorrido
+            function updateClock() {
+                const now = Date.now();
+                const diff = now - startTime; // diferença em milissegundos
+
+                // Converte para horas, minutos e segundos
+                const totalSeconds = Math.floor(diff / 1000);
+                const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+                const seconds = String(totalSeconds % 60).padStart(2, '0');
+
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+
+            // Atualiza imediatamente e depois a cada 1 segundo
             updateClock();
             setInterval(updateClock, 1000);
 
+            // =============================================
+            // TELA CHEIA AUTOMÁTICA
+            // =============================================
+            
             function entrarTelaCheia() {
                 const el = document.documentElement;
                 if (el.requestFullscreen) {
@@ -339,6 +371,7 @@
                     entrarTelaCheia();
                 }
             });
+
         })();
     </script>
 </body>
