@@ -146,7 +146,6 @@
             line-height: 1.3;
         }
 
-        /* FRASE "DESDE O DIA" - sem linha, só o texto */
         .center-box .subtitle {
             color: white;
             font-size: 1.8rem;
