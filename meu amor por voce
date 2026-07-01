@@ -141,9 +141,20 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.2rem;
             word-break: break-word;
             line-height: 1.3;
+        }
+
+        /* FRASE "DESDE O DIA" - sem linha, só o texto */
+        .center-box .subtitle {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
+            margin-bottom: 0.8rem;
+            word-break: break-word;
         }
 
         .center-box .highlight-date {
@@ -211,18 +222,11 @@
             color: #ffb3c6;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.10; }
-        }
-        .clock-container .time-block span {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
         @media (max-width: 550px) {
             .center-box { padding: 1.8rem 1.2rem; }
             .center-box .nome-top { font-size: 2.0rem; }
             .center-box h1 { font-size: 1.6rem; }
+            .center-box .subtitle { font-size: 1.4rem; }
             .center-box .highlight-date { font-size: 2.4rem; padding: 0.1rem 0.6rem; }
             .clock-container { font-size: 1.3rem; padding: 0.3rem 0.6rem; gap: 0.2rem; }
             .clock-container .time-block { padding: 0.1rem 0.4rem; }
@@ -233,6 +237,7 @@
             .center-box { padding: 1.2rem 0.8rem; width: 92%; }
             .center-box .nome-top { font-size: 1.6rem; }
             .center-box h1 { font-size: 1.3rem; }
+            .center-box .subtitle { font-size: 1.1rem; }
             .center-box .highlight-date { font-size: 1.8rem; }
             .clock-container { font-size: 1rem; padding: 0.2rem 0.4rem; }
         }
@@ -267,6 +272,7 @@
         <div class="center-box">
             <div class="nome-top">DEBÓRA</div>
             <h1>EU TE AMO</h1>
+            <div class="subtitle">DESDE O DIA</div>
             <div class="highlight-date">26/06/2026</div>
             <div class="clock-container" id="clockDisplay">
                 <div class="time-block">
