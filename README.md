@@ -230,58 +230,23 @@
         }
 
         @media (max-width: 550px) {
-            .center-box {
-                padding: 1.8rem 1.2rem;
-            }
-            .center-box .nome-top {
-                font-size: 2.0rem;
-            }
-            .center-box h1 {
-                font-size: 1.6rem;
-            }
-            .center-box .subtitle {
-                font-size: 1.4rem;
-            }
-            .center-box .highlight-date {
-                font-size: 2.4rem;
-                padding: 0.1rem 0.6rem;
-            }
-            .clock-container {
-                font-size: 1.3rem;
-                padding: 0.3rem 0.6rem;
-                gap: 0.2rem;
-            }
-            .clock-container .time-block {
-                padding: 0.1rem 0.4rem;
-            }
-            .hearts-unicode {
-                font-size: 20px;
-                letter-spacing: 18px;
-                line-height: 1.6;
-            }
+            .center-box { padding: 1.8rem 1.2rem; }
+            .center-box .nome-top { font-size: 2.0rem; }
+            .center-box h1 { font-size: 1.6rem; }
+            .center-box .subtitle { font-size: 1.4rem; }
+            .center-box .highlight-date { font-size: 2.4rem; padding: 0.1rem 0.6rem; }
+            .clock-container { font-size: 1.3rem; padding: 0.3rem 0.6rem; gap: 0.2rem; }
+            .clock-container .time-block { padding: 0.1rem 0.4rem; }
+            .hearts-unicode { font-size: 20px; letter-spacing: 18px; line-height: 1.6; }
         }
 
         @media (max-width: 400px) {
-            .center-box {
-                padding: 1.2rem 0.8rem;
-                width: 92%;
-            }
-            .center-box .nome-top {
-                font-size: 1.6rem;
-            }
-            .center-box h1 {
-                font-size: 1.3rem;
-            }
-            .center-box .subtitle {
-                font-size: 1.1rem;
-            }
-            .center-box .highlight-date {
-                font-size: 1.8rem;
-            }
-            .clock-container {
-                font-size: 1rem;
-                padding: 0.2rem 0.4rem;
-            }
+            .center-box { padding: 1.2rem 0.8rem; width: 92%; }
+            .center-box .nome-top { font-size: 1.6rem; }
+            .center-box h1 { font-size: 1.3rem; }
+            .center-box .subtitle { font-size: 1.1rem; }
+            .center-box .highlight-date { font-size: 1.8rem; }
+            .clock-container { font-size: 1rem; padding: 0.2rem 0.4rem; }
         }
     </style>
 </head>
