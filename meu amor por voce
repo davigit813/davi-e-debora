@@ -146,16 +146,6 @@
             line-height: 1.3;
         }
 
-        .center-box .subtitle {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px #ff3366, 0 0 40px #ff1a5e;
-            margin-bottom: 0.8rem;
-            word-break: break-word;
-        }
-
         .center-box .highlight-date {
             color: white;
             font-size: 3.2rem;
@@ -233,7 +223,6 @@
             .center-box { padding: 1.8rem 1.2rem; }
             .center-box .nome-top { font-size: 2.0rem; }
             .center-box h1 { font-size: 1.6rem; }
-            .center-box .subtitle { font-size: 1.4rem; }
             .center-box .highlight-date { font-size: 2.4rem; padding: 0.1rem 0.6rem; }
             .clock-container { font-size: 1.3rem; padding: 0.3rem 0.6rem; gap: 0.2rem; }
             .clock-container .time-block { padding: 0.1rem 0.4rem; }
@@ -244,7 +233,6 @@
             .center-box { padding: 1.2rem 0.8rem; width: 92%; }
             .center-box .nome-top { font-size: 1.6rem; }
             .center-box h1 { font-size: 1.3rem; }
-            .center-box .subtitle { font-size: 1.1rem; }
             .center-box .highlight-date { font-size: 1.8rem; }
             .clock-container { font-size: 1rem; padding: 0.2rem 0.4rem; }
         }
@@ -279,7 +267,6 @@
         <div class="center-box">
             <div class="nome-top">DEBÓRA</div>
             <h1>EU TE AMO</h1>
-            <div class="subtitle">DESDE O DIA</div>
             <div class="highlight-date">26/06/2026</div>
             <div class="clock-container" id="clockDisplay">
                 <div class="time-block">
@@ -302,29 +289,19 @@
 
     <script>
         (function() {
-            // =============================================
-            // TEMPORIZADOR INFINITO (NUNCA RESETA)
-            // =============================================
-            
             const STORAGE_KEY = 'amor_start_time';
-
-            // Pega o horário de início salvo ou cria um novo
             let startTime = localStorage.getItem(STORAGE_KEY);
             
             if (!startTime) {
-                // Primeira vez que a pessoa acessa: salva o horário atual
                 startTime = Date.now();
                 localStorage.setItem(STORAGE_KEY, startTime);
             } else {
                 startTime = parseInt(startTime, 10);
             }
 
-            // Função que atualiza o relógio com o tempo decorrido
             function updateClock() {
                 const now = Date.now();
-                const diff = now - startTime; // diferença em milissegundos
-
-                // Converte para horas, minutos e segundos
+                const diff = now - startTime;
                 const totalSeconds = Math.floor(diff / 1000);
                 const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
                 const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
@@ -335,14 +312,9 @@
                 document.getElementById('seconds').textContent = seconds;
             }
 
-            // Atualiza imediatamente e depois a cada 1 segundo
             updateClock();
             setInterval(updateClock, 1000);
 
-            // =============================================
-            // TELA CHEIA AUTOMÁTICA
-            // =============================================
-            
             function entrarTelaCheia() {
                 const el = document.documentElement;
                 if (el.requestFullscreen) {
@@ -371,7 +343,6 @@
                     entrarTelaCheia();
                 }
             });
-
         })();
     </script>
 </body>
